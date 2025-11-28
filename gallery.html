@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Gallery | Teens For Teens Kenya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery-hero {
+            background: linear-gradient(135deg, #1a472a 0%, #2d5a2d 50%, #38761d 100%);
+            padding: 120px 0 60px;
+            color: white;
+            text-align: center;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 3rem 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background: #000;
+        }
+        
+        .gallery-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .video-play-btn:hover {
+            background: var(--primary-green);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            padding: 1rem;
+            background: white;
+        }
+        
+        .gallery-caption-title {
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-caption-text {
+            font-size: 0.875rem;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .back-btn:hover {
+            background: var(--secondary-green);
+            transform: translateY(-2px);
+        }
+        
+        .gallery-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: var(--primary-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-btn:hover {
+            background: var(--secondary-green);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navigation (same as index.html) -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <img src="resources/logo.jpg" 
+                            alt="Teens For Teens Kenya Logo" 
+                            class="w-10 h-10 rounded-lg object-cover mr-3">
+                        <span class="ml-2 text-xl font-bold text-gray-800 hidden sm:inline">Teens For Teens Kenya</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#mission" class="nav-link">Mission</a>
+                    <a href="index.html#impact" class="nav-link">Impact</a>
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                    <a href="index.html#team" class="nav-link">Team</a>
+                    <a href="index.html#donate" class="donate-btn">
+                        <i class="fas fa-heart mr-2"></i> DONATE NOW
+                    </a>
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <button id="hamburger" class="mobile-menu-btn">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="index.html#projects" class="back-btn">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Projects
+            </a>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Project Gallery</h1>
+            <p class="text-xl opacity-90">Visual journey through our environmental conservation and youth empowerment initiatives</p>
+        </div>
+    </section>
+
+    <!-- Full Gallery -->
+    <section class="gallery-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="gallery-grid">
+                <!-- Video Item -->
+                <div class="gallery-item fade-up">
+                    <div class="video-container">
+                        <video class="gallery-video" poster="resources/projects/video-poster.jpg" controls>
+                            <source src="resources/projects/ceo-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">TTK Introductory Video</h4>
+                        <p class="gallery-caption-text">Listen to what the team has to say about the project.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <div class="video-container">
+                        <video class="gallery-video" poster="resources/projects/video-poster.jpg" controls>
+                            <source src="resources/projects/prepping-seedlings.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Seedlings prep Video</h4>
+                        <p class="gallery-caption-text">Watch as students are taught how to prepare seedlings.</p>
+                    </div>
+                </div>
+
+                <!-- Photo 1 -->
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/tree-planting.jpg" alt="Tree Planting Initiative" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Tree Planting Initiative</h4>
+                        <p class="gallery-caption-text">Teens for Teens Kenya educating students on the importance of tree planting.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/head-of-agriculture.jpg" alt="School Partnership" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">School Partnership</h4>
+                        <p class="gallery-caption-text">Our team posing with the head of agriculture of Muslim Primary School.</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 3 -->
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/indakwa.jpg" alt="Indakwa speaking to students" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Educating Students</h4>
+                        <p class="gallery-caption-text">Our Secretary, William Indakwa, ensuring that the students understand the facts about seedlings.</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 4 -->
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/team-chlorophyl.jpg" alt="Team chlorophyl at its best" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Team chlorophyl at its best</h4>
+                        <p class="gallery-caption-text">No fact will be left untold with us here, as long as it can bring change, it has to be told.</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 5 -->
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/members.jpg" alt="Meet the TTK Team" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Meet the TTK Team</h4>
+                        <p class="gallery-caption-text">Teens for Teens Kenya team members ready for the tree planting session.</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 6 -->
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/handing-out-seedlings.jpg" alt="Seedlings distribution" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Seedlings distribution</h4>
+                        <p class="gallery-caption-text">Students line up to receive their seedlings from our CEO.</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 7 -->
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/one-teen-one-tree-one-future.jpg" alt="Group Slogan in action" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Group Slogan in action</h4>
+                        <p class="gallery-caption-text">Showcasing the organization's mission of one teen, one tree, one future.</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 8 -->
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/success-cards.jpg" alt="Encouraging Candidates" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Encouraging Candidates</h4>
+                        <p class="gallery-caption-text">TTK team handing out success cards at Musali Secondary School ahead of national examination.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/instructions.jpg" alt="Giving out guidance" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Giving out guidance</h4>
+                        <p class="gallery-caption-text">TTK team member offering guidance to a student.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/girl-child.jpg" alt="Open for all" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Open for all</h4>
+                        <p class="gallery-caption-text">Ensuring that everyone takes part in our movement and activities.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/organising.jpg" alt="Making final preparations for the day" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Making final preparations for the day</h4>
+                        <p class="gallery-caption-text">Everyone gets in place for the tasks ahead.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/seedling-facts.jpg" alt="Teaming up with the students" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Teaming up with the students</h4>
+                        <p class="gallery-caption-text">Our members join group activities with the students to educate them about the importance of trees</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/ceo-briefing.jpg" alt="Introductory briefing" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Introductory briefing</h4>
+                        <p class="gallery-caption-text">The TTK team gives a briefing to the school's administrators and students.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/prepping.jpg" alt="Leading by example" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Leading by example</h4>
+                        <p class="gallery-caption-text">Our CEO takes his seedling alongside a TTK member to guide on how it should be carried out.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/teensforteens.jpg" alt="Tree nursery establishment" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Tree Nursery Project</h4>
+                        <p class="gallery-caption-text">A tree nursery is established at a local community by TTK members.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/tree-planting.jpg" alt="One teen, one tree, one future" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">One teen, one tree, one future</h4>
+                        <p class="gallery-caption-text">With everyone having a seedling, the final instructions are given.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/with-the-ceo.jpg" alt="A short briefing" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">A short briefing</h4>
+                        <p class="gallery-caption-text">TTK team briefs the students.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/strolling.jpg" alt="Walking for the cause" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Walking for the cause</h4>
+                        <p class="gallery-caption-text">The team takes a walk with students heading to the tree nursery</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/prepping-distribution.jpg" alt="Securing the seedlings" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Securing the seedlings</h4>
+                        <p class="gallery-caption-text">Seedlings are verified to ensure they are healthy and ready for distribution.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-up">
+                    <img src="resources/projects/success-card.jpg" alt="Giving back to the community" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4 class="gallery-caption-title">Giving back to the community</h4>
+                        <p class="gallery-caption-text">The TTK team hands out success cards to the school's administrators</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 mb-16">
+                <p class="text-gray-600 mb-4">Want to see more of our work?</p>
+                <a href="index.html#donate" class="gallery-btn">
+                    <i class="fas fa-hand-holding-heart mr-2"></i> Support Our Mission
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="resources/logo.jpg" alt="Teens For Teens Kenya" class="footer__logo">
+                    <div class="footer__text">
+                        <h3 class="footer__title">Teens For Teens Kenya</h3>
+                        <p class="footer__tagline">Cultivating Green Leaders for a Sustainable Kenya</p>
+                    </div>
+                </div>
+                
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4 class="footer__heading">Quick Links</h4>
+                        <a href="index.html#mission" class="footer__link">Our Mission</a>
+                        <a href="index.html#impact" class="footer__link">Our Impact</a>
+                        <a href="index.html#projects" class="footer__link">Projects</a>
+                        <a href="index.html#team" class="footer__link">Our Team</a>
+                    </div>
+                    
+                    <div class="footer__column">
+                        <h4 class="footer__heading">Get Involved</h4>
+                        <a href="index.html#donate" class="footer__link">Donate</a>
+                        <a href="index.html#contact" class="footer__link">Volunteer</a>
+                        <a href="index.html#contact" class="footer__link">Partnership</a>
+                        <a href="index.html#contact" class="footer__link">Careers</a>
+                    </div>
+                    
+                    <div class="footer__column">
+                        <h4 class="footer__heading">Contact Info</h4>
+                        <p class="footer__contact">
+                            <i class="fas fa-phone"></i>
+                            +254-757202147
+                        </p>
+                        <p class="footer__contact">
+                            <i class="fas fa-phone"></i>
+                            +254-702607629
+                        </p>
+                        <p class="footer__contact">
+                            <i class="fas fa-envelope"></i>
+                            teensforteenskenya6@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__social">
+                <h4 class="footer__social-title">Follow Our Journey</h4>
+                <div class="footer__social-links">
+                    <a href="https://www.facebook.com/61579905541139/" class="footer__social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/teensforteenskenya/" class="footer__social-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 Teens for Teens Kenya. All rights reserved. | Cultivating Future Leaders.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

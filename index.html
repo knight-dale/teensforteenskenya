@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teens For Teens Kenya</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-gray-800">
+
+    <!-- Navbar (Fixed and Professional) -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 transition-all duration-300 transform">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16"> <!-- Reduced from h-20 to h-16 -->
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0 flex items-center">
+                        <img src="resources/logo.jpg" 
+                            alt="Teens For Teens Kenya Logo" 
+                            class="w-8 h-8 rounded-lg object-cover mr-3"> <!-- Reduced logo size -->
+                        <span class="ml-2 text-lg font-bold text-gray-800 hidden sm:inline">Teens For Teens Kenya</span> <!-- Reduced text size -->
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6"> <!-- Reduced spacing -->
+                    <a href="#mission" class="nav-link text-sm">Mission</a> <!-- Smaller text -->
+                    <a href="#impact" class="nav-link text-sm">Impact</a>
+                    <a href="#projects" class="nav-link text-sm">Projects</a>
+                    <a href="#team" class="nav-link text-sm">Team</a>
+                    <a href="#merchandise" class="nav-link text-sm">Merchandise</a>
+                    <!-- Donate Button (Desktop) -->
+                    <a href="#donate" class="donate-btn text-sm py-2 px-4"> <!-- Smaller button -->
+                        <i class="fas fa-heart mr-2"></i> DONATE NOW
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button id="hamburger" class="mobile-menu-btn">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-sidebar" class="mobile-sidebar">
+        <div class="mobile-sidebar__header">
+            <div class="mobile-sidebar__brand">
+                <img src="resources/logo.jpg" 
+                    alt="Teens For Teens Kenya Logo" 
+                    class="mobile-sidebar__logo">
+                <span class="mobile-sidebar__title">Teens For Teens Kenya</span>
+            </div>
+            <button id="sidebar-close" class="mobile-sidebar__close">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div class="mobile-sidebar__content">
+            <a href="#mission" class="mobile-sidebar__link">
+                <i class="fas fa-bullseye mobile-sidebar__icon"></i>
+                <span>Our Mission</span>
+            </a>
+            <a href="#impact" class="mobile-sidebar__link">
+                <i class="fas fa-chart-line mobile-sidebar__icon"></i>
+                <span>Our Impact</span>
+            </a>
+            <a href="#projects" class="mobile-sidebar__link">
+                <i class="fas fa-project-diagram mobile-sidebar__icon"></i>
+                <span>Projects</span>
+            </a>
+            <a href="#team" class="mobile-sidebar__link">
+                <i class="fas fa-users mobile-sidebar__icon"></i>
+                <span>Our Team</span>
+            </a>
+            <a href="#merchandise" class="mobile-sidebar__link">
+                <i class="fas fa-tshirt mobile-sidebar__icon"></i>
+                <span>Merchandise</span>
+            </a>
+            <a href="#donate" class="mobile-sidebar__link mobile-sidebar__link--donate">
+                <i class="fas fa-heart mobile-sidebar__icon"></i>
+                <span>Donate Now</span>
+            </a>
+        </div>
+
+        <div class="mobile-sidebar__footer">
+            <div class="mobile-sidebar__social">
+                <a href="#" class="mobile-sidebar__social-link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="mobile-sidebar__social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="mobile-sidebar__social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="mobile-sidebar__social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <div class="mobile-sidebar__contact">
+                <p class="mobile-sidebar__contact-item">
+                    <i class="fas fa-phone"></i>
+                    +254-757202147
+                </p>
+                <p class="mobile-sidebar__contact-item">
+                    <i class="fas fa-phone"></i>
+                    +254-702607629
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <header id="home" class="hero-bg pt-40 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center text-white">
+            
+            <!-- Left: Main Text Content -->
+            <div class="fade-up delay-100">
+                <div class="badge">
+                    <span class="badge-dot"></span>
+                    Empowering Youth Since 2020
+                </div>
+
+                <h1 class="hero-title">
+                    Cultivating <span class="text-yellow-400">Green Leaders</span> for a Sustainable Kenya.
+                </h1>
+
+                <p class="hero-subtitle">
+                    Teens for Teens Kenya (TTK) is a youth-led initiative building practical environmental skills among young people through hands-on conservation work, sustainable agriculture projects, and community training.
+                </p>
+
+                <p class="hero-impact">
+                    We focus on real action — tree planting, school programs, and grassroots climate education that reaches communities where it matters.
+                </p>
+            </div>
+
+            <!-- Right: CEO Quote Card -->
+            <div class="ceo-card fade-up delay-200">
+                <div class="ceo-card-header">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left text-green-800 text-xl"></i>
+                    </div>
+                    <blockquote class="ceo-quote">
+                        "At TeensforTeens Kenya, we believe in this. We don't just plant trees, we grill minds, we plant hope, we plant purpose. Be part of the movement"
+                    </blockquote>
+                </div>
+
+                <div class="ceo-info">
+                    <img class="ceo-photo"
+                        src="resources/projects/Straw.jpg"
+                        alt="CEO Photo">
+                    <div>
+                        <p class="ceo-name">Straw Makhandia Akungwi, CEO</p>
+                        <p class="ceo-role">Teens For Teens Kenya</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                    <a href="#mission" class="primary-btn">
+                        <i class="fas fa-seedling mr-2"></i> Explore Our Work
+                    </a>
+                    <a href="#donate" class="secondary-btn">
+                        <i class="fas fa-hand-holding-heart mr-2"></i> Join the Movement
+                    </a>
+            </div>
+
+        </div>
+    </header>
+
+
+        <!-- Statistics Section with Background Photo -->
+    <section class="stats-section" style="background: url('resources/projects/prepping-distribution.jpg') center/cover; position: relative;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="position: relative; z-index: 2;">
+            <div class="stats-grid">
+                <div class="stat-item fade-up delay-100">
+                    <div class="counter" data-target="5000">0</div>
+                    <p class="stat-label">Trees Planted</p>
+                </div>
+                <div class="stat-item fade-up delay-200">
+                    <div class="counter" data-target="1500">0</div>
+                    <p class="stat-label">Youth Empowered</p>
+                </div>
+                <div class="stat-item fade-up delay-300">
+                    <div class="counter" data-target="25">0</div>
+                    <p class="stat-label">Schools Reached</p>
+                </div>
+                <div class="stat-item fade-up delay-400">
+                    <div class="counter" data-target="8">0</div>
+                    <p class="stat-label">Counties Active</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section id="mission" class="mission-section scroll-mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header fade-up">
+                <h2 class="section-subtitle">Our Foundation</h2>
+                <p class="section-title">Why We Exist: Our Core Mission</p>
+            </div>
+            <div class="mission-card fade-up delay-100">
+                <p class="mission-text">
+                    Our main objective is to empower young people through Agriculture by providing quality chicks and imparting skills on how to conserve the environment by distributing quality tree seedlings. This ensures they master the process of nurturing a tree from its seedling state to maturity. Our formation was motivated by the urgent need to address the growing environmental challenges and food insecurity exacerbated by climate change. Recognizing the untapped potential of youth to contribute meaningfully, we aim to empower them through education, resources, and hands-on initiatives. By nurturing a generation of environmentally conscious and agriculturally skilled individuals, we aspire to build a resilient society prepared to tackle the climate crisis head-on.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact & Activities Section with Background Photo -->
+    <section id="impact" class="impact-section scroll-mt-20" style="background: url('resources/projects/group-members.jpg') center/cover fixed; position: relative;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="position: relative; z-index: 2;">
+            <div class="section-header fade-up">
+                <h2 class="section-subtitle">Action & Results</h2>
+                <p class="section-title">Our Current Impact and Initiatives</p>
+            </div>
+
+            <div class="impact-grid">
+                <!-- Initiative 1: Environmental Conservation -->
+                <div class="impact-card fade-up delay-100">
+                    <div class="card-icon">
+                        <i class="fas fa-tree text-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="card-title">Reforestation Drives</h3>
+                    <p class="card-text">
+                        We actively distribute free tree seedlings to schools and communities. This vital initiative combats deforestation and instills a deep sense of responsibility in young people to care for their local environment and climate.
+                    </p>
+                </div>
+
+                <!-- Initiative 2: Agricultural Empowerment -->
+                <div class="impact-card fade-up delay-200">
+                    <div class="card-icon">
+                        <i class="fas fa-egg text-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="card-title">Poultry & Farming Skills</h3>
+                    <p class="card-text">
+                        We provide quality chicks and comprehensive training on proper poultry care to students. This program empowers youth and communities to practice sustainable farming, enhancing livelihoods and food security.
+                    </p>
+                </div>
+
+                <!-- Initiative 3: Climate Change Advocacy -->
+                <div class="impact-card fade-up delay-300">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap text-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="card-title">Educational Workshops</h3>
+                    <p class="card-text">
+                        Through engaging educational workshops and motivational campaigns, our organization inspires youth and communities to take proactive steps in mitigating and adapting to the effects of climate change.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Youth Empowerment Through Agriculture Section -->
+    <section id="youth-empowerment" class="youth-empowerment-section scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header fade-up">
+                <h2 class="section-subtitle">Transforming Futures</h2>
+                <p class="section-title">Empowering Youth Through Agriculture</p>
+            </div>
+
+            <div class="empowerment-grid">
+                <!-- Card 1: Skills Development -->
+                <div class="empowerment-card fade-up delay-100">
+                    <div class="empowerment-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="empowerment-title">Practical Skills Training</h3>
+                    <p class="empowerment-text">
+                        We equip young people with hands-on agricultural skills in poultry farming, crop cultivation, 
+                        and environmental conservation. These practical skills create immediate employment opportunities 
+                        and foster entrepreneurship in the agricultural sector.
+                    </p>
+                </div>
+
+                <!-- Card 2: Economic Empowerment -->
+                <div class="empowerment-card fade-up delay-200">
+                    <div class="empowerment-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="empowerment-title">Economic Independence</h3>
+                    <p class="empowerment-text">
+                        By providing quality chicks, tree seedlings, and training, we enable youth to start their own 
+                        agribusinesses. This approach directly addresses unemployment by creating sustainable income 
+                        streams and reducing dependency on formal employment.
+                    </p>
+                </div>
+
+                <!-- Card 3: Climate Resilience -->
+                <div class="empowerment-card fade-up delay-300">
+                    <div class="empowerment-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="empowerment-title">Climate Resilience</h3>
+                    <p class="empowerment-text">
+                        We train youth in climate-smart agriculture techniques, preparing them to adapt to changing 
+                        environmental conditions. This knowledge makes them valuable assets in building community 
+                        resilience against climate change impacts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-16 fade-up delay-400">
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-primary-green mb-4">
+                        Join the Movement: From Job Seekers to Job Creators
+                    </h3>
+                    <p class="text-lg text-dark-gray mb-8">
+                        Every young person we train becomes a catalyst for change in their community. 
+                        Through agriculture, we're not just planting trees and raising chickens, we're cultivating 
+                        a generation of green entrepreneurs who will drive Kenya's sustainable development.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#donate" class="primary-btn">
+                            <i class="fas fa-hand-holding-usd mr-2"></i> Invest in Youth
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Statistics Banner -->
+    <section class="bg-primary-green py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-up">
+                    <div class="text-3xl font-bold text-accent-yellow mb-2">75%</div>
+                    <div class="text-white font-medium">Population Under 35</div>
+                    <p class="text-green-100 text-sm mt-1">Kenya's youth demographic</p>
+                </div>
+                <div class="fade-up delay-100">
+                    <div class="text-3xl font-bold text-accent-yellow mb-2">Ksh 47.6B</div>
+                    <div class="text-white font-medium">Agriculture allocation Budget</div>
+                    <p class="text-green-100 text-sm mt-1">Opportunity for local production</p>
+                </div>
+                <div class="fade-up delay-200">
+                    <div class="text-3xl font-bold text-accent-yellow mb-2">60%</div>
+                    <div class="text-white font-medium">Arable Land</div>
+                    <p class="text-green-100 text-sm mt-1">Suitable for agriculture</p>
+                </div>
+                <div class="fade-up delay-300">
+                    <div class="text-3xl font-bold text-accent-yellow mb-2">5M</div>
+                    <div class="text-white font-medium">Youth Needed</div>
+                    <p class="text-green-100 text-sm mt-1">In agriculture by 2030</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery Section -->
+    <section id="projects" class="projects-section scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header fade-up">
+                <h2 class="section-subtitle">Our Portfolio</h2>
+                <p class="section-title">Visualizing Our Project Success</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Photo 1 -->
+                <div class="project-card fade-up delay-100">
+                    <div class="project-image-container">
+                        <img class="project-image" src="resources/projects/tree-planting.jpg" alt="Tree Planting Initiative">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <i class="fas fa-expand project-expand-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Tree Planting Initiative</h4>
+                        <p class="project-description">Teens for Teens Kenya educating students on the importance of tree planting.</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 2 -->
+                <div class="project-card fade-up delay-150">
+                    <div class="project-image-container">
+                        <img class="project-image" src="resources/projects/head-of-agriculture.jpg" alt="TTK team posing with school principal">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <i class="fas fa-expand project-expand-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">School Partnership</h4>
+                        <p class="project-description">Our team posing with the head of agriculture of Muslim Primary School.</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 3 -->
+                <div class="project-card fade-up delay-200">
+                    <div class="project-image-container">
+                        <img class="project-image" src="resources/projects/indakwa.jpg" alt="Educating Students">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <i class="fas fa-expand project-expand-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Educating Students</h4>
+                        <p class="project-description">Our Secretary, William Indakwa, ensuring that the students understand the facts about seedlings.</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 4 -->
+                <div class="project-card fade-up delay-250">
+                    <div class="project-image-container">
+                        <img class="project-image" src="resources/projects/team-chlorophyl.jpg" alt="Distributing tree seedlings to community">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <i class="fas fa-expand project-expand-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Community Outreach</h4>
+                        <p class="project-description">Distributing quality tree seedlings to local community members</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 5 -->
+                <div class="project-card fade-up delay-300">
+                    <div class="project-image-container">
+                        <img class="project-image" src="resources/projects/members.jpg" alt="Meet the TTK Team">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <i class="fas fa-expand project-expand-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Meet the TTK Team</h4>
+                        <p class="project-description">Teens for Teens Kenya team members ready for the tree planting session.</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 6 -->
+                <div class="project-card fade-up delay-350">
+                    <div class="project-image-container">
+                        <img class="project-image" src="resources/projects/handing-out-seedlings.jpg" alt="Seedlings distribution">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <i class="fas fa-expand project-expand-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Seedlings distribution</h4>
+                        <p class="project-description">Students line up to receive their seedlings from our CEO.</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 7 -->
+                <div class="project-card fade-up delay-400">
+                    <div class="project-image-container">
+                        <img class="project-image" src="resources/projects/one-teen-one-tree-one-future.jpg" alt="Group slogan in action">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <i class="fas fa-expand project-expand-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Group slogan in action</h4>
+                        <p class="project-description">Showcasing the organizations's mission of one teen, one tree, one future.</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 8 -->
+                <div class="project-card fade-up delay-450">
+                    <div class="project-image-container">
+                        <img class="project-image" src="resources/projects/success-cards.jpg" alt="Encouraging Candidates">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <i class="fas fa-expand project-expand-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="project-title">Encouraging Candidates</h4>
+                        <p class="project-description">TTK team handing out success cards at Musali Secondary School, Ikolomani, Kakamega ahead of the national examination.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-up delay-500">
+                <a href="gallery.html" class="gallery-btn">
+                    <i class="fas fa-images mr-2"></i> View Full Project Gallery
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section scroll-mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header fade-up">
+                <h2 class="section-subtitle">The Leadership</h2>
+                <p class="section-title">Meet Our Committed Team</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card fade-up delay-100">
+                    <img class="team-photo" 
+                         src="resources/projects/Straw.jpg" 
+                         alt="Photo of Straw Makhandia Akungwi">
+                    <h4 class="team-name">Straw Makhandia Akungwi</h4>
+                    <p class="team-role">CEO</p>
+                </div>
+                
+                <div class="team-card fade-up delay-200">
+                    <img class="team-photo" 
+                         src="resources/projects/Willy.jpg" 
+                         alt="Photo of William Indakwa">
+                    <h4 class="team-name">William Indakwa</h4>
+                    <p class="team-role">Secretary</p>
+                    <a href="mailto:indakwawilliam@gmail.com" class="team-email">indakwawilliam@gmail.com</a>
+                </div>
+                
+                <div class="team-card fade-up delay-300">
+                    <img class="team-photo" 
+                         src="https://placehold.co/128x128/fcc419/1a472a?text=Straw" 
+                         alt="Photo of Rex Omori Mwale">
+                    <h4 class="team-name">Rex Omori Mwale</h4>
+                    <p class="team-role">Treasurer</p>
+                    <p class="team-description">Primary Liaison</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Merchandise Section -->
+    <section id="merchandise" class="merchandise-section scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header fade-up">
+                <h2 class="section-subtitle">Support Our Cause</h2>
+                <p class="section-title">Wear Your Support</p>
+                <p class="text-dark-gray mt-4">Purchase our official merchandise and help fund our environmental initiatives while spreading awareness.</p>
+            </div>
+
+            <div class="merchandise-content">
+                <!-- T-shirt Product -->
+                <div class="product-card fade-up delay-100">
+                    <div class="product-images">
+                        <div class="product-image-container">
+                            <img src="resources/projects/t-shirt-1.jpg" alt="TTK T-shirt Front" class="product-image">
+                            <div class="image-label">Front View</div>
+                        </div>
+                        <div class="product-image-container">
+                            <img src="resources/projects/t-shirt-2.jpg" alt="TTK T-shirt Back" class="product-image">
+                            <div class="image-label">Back View</div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-details">
+                        <h3 class="product-title">Official TTK T-shirt</h3>
+                        <p class="product-description">
+                            Show your support for Teens For Teens Kenya with our premium quality cotton t-shirt. 
+                            Each purchase directly funds our tree planting initiatives and youth empowerment programs.
+                        </p>
+                        
+                        <div class="product-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                                <span>100% Premium Cotton</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                                <span>Available in Multiple Sizes</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                                <span>Environmentally Friendly Printing</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pricing-section">
+                            <div class="price">KSH 800</div>
+                            <p class="shipping-info">Fast delivery within Nairobi</p>
+                        </div>
+                        
+                       <div class="action-section">
+                            <a href="purchase.html" class="order-btn">
+                                <i class="fas fa-shopping-cart mr-2"></i> Order Now
+                            </a>
+                            <p class="support-text">
+                                <i class="fas fa-seedling mr-1"></i>
+                                Each purchase plants 2 trees in Kenyan communities
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- How to Order Section -->
+                <div class="ordering-info fade-up delay-200">
+                    <h3 class="ordering-title">How to Order</h3>
+                    <div class="ordering-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Place Your Order</h4>
+                                <p>Click the "Order Now" button and provide your details</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Make Payment</h4>
+                                <p>Use M-Pesa or bank transfer to complete your purchase</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Receive Your T-shirt</h4>
+                                <p>We'll deliver your t-shirt within 3-5 business days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="donate-section scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="donate-subtitle">
+                Partner with Us
+            </h2>
+            <p class="donate-title">
+                Your Investment is Our Impact
+            </p>
+            <p class="donate-description">
+                Dear Esteemed Partners, the Earth is our shared home, and we are committed to empowering young people to lead the fight against environmental degradation. Your contribution fuels tangible results in reforestation, climate education, and food security.
+            </p>
+
+            <div class="payment-card fade-up delay-200">
+                <h3 class="payment-title">Secure Payment Details</h3>
+                <div class="payment-details">
+                    <div class="payment-label">PAYBILL:</div>
+                    <div class="payment-value">880100</div>
+
+                    <div class="payment-label">ACCOUNT NO:</div>
+                    <div class="payment-value">9676730018</div>
+
+                    <div class="payment-label">BANK:</div>
+                    <div class="payment-bank">NCBA BANK</div>
+                </div>
+            </div>
+            <p class="donate-footer">
+                Every contribution, big or small, establishes a legacy of environmental stewardship and resilience for the next generation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section id="comments" class="comments-section scroll-mt-20" style="background: var(--white); padding: 4rem 0;">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header fade-up">
+                <h2 class="section-subtitle">Share Your Thoughts</h2>
+                <p class="section-title">Leave a Comment</p>
+                <p class="text-dark-gray mt-4">We'd love to hear from you! Share your thoughts, questions, or feedback about our work.</p>
+            </div>
+
+            <div class="comments-form fade-up delay-100">
+                <form id="commentForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-dark-gray mb-2">Your Name *</label>
+                            <input type="text" id="name" name="name" required 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-green focus:border-transparent transition-all duration-200"
+                                placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-dark-gray mb-2">Your Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-green focus:border-transparent transition-all duration-200"
+                                placeholder="Enter your email (optional)">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="comment" class="block text-sm font-medium text-dark-gray mb-2">Your Comment *</label>
+                        <textarea id="comment" name="comment" required rows="5"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-green focus:border-transparent transition-all duration-200 resize-vertical"
+                                placeholder="Share your thoughts, questions, or feedback..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" id="submitBtn"
+                                class="primary-btn bg-primary-green hover:bg-green-800 text-white px-8 py-3 rounded-lg transition-all duration-200">
+                            <i class="fas fa-paper-plane mr-2"></i> Submit Comment
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Comments Display Area -->
+            <div id="commentsDisplay" class="mt-12 space-y-6 fade-up delay-200">
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center">
+                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-green mr-3"></div>
+                        <span class="text-dark-gray">Loading comments...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-section scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header fade-up">
+                <h2 class="section-subtitle">Get In Touch</h2>
+                <p class="section-title">Send Us a Message</p>
+                <p class="text-dark-gray mt-4">Have a specific question or want to collaborate? Send us an email directly.</p>
+            </div>
+
+            <div class="contact-content fade-up delay-100 text-center">
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                    <div class="contact-icon mb-6">
+                        <i class="fas fa-envelope text-5xl text-primary-green"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary-green mb-4">Email Us Directly</h3>
+                    <p class="text-dark-gray mb-6">For inquiries, partnerships, or any questions, feel free to send us an email at:</p>
+                    <a href="mailto:teensforteenskenya6@gmail.com" 
+                       class="contact-email-btn">
+                        <i class="fas fa-paper-plane mr-3"></i>
+                        Send us an Email
+                    </a>
+                    <p class="text-sm text-dark-gray mt-4">We typically respond within 24 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="resources/logo.jpg" alt="Teens For Teens Kenya" class="footer__logo">
+                    <div class="footer__text">
+                        <h3 class="footer__title">Teens For Teens Kenya</h3>
+                        <p class="footer__tagline">Cultivating Green Leaders for a Sustainable Kenya</p>
+                    </div>
+                </div>
+                
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4 class="footer__heading">Quick Links</h4>
+                        <a href="#mission" class="footer__link">Our Mission</a>
+                        <a href="#impact" class="footer__link">Our Impact</a>
+                        <a href="#projects" class="footer__link">Projects</a>
+                        <a href="#team" class="footer__link">Our Team</a>
+                    </div>
+                    
+                    <div class="footer__column">
+                        <h4 class="footer__heading">Get Involved</h4>
+                        <a href="#donate" class="footer__link">Donate</a>
+                        <a href="#contact" class="footer__link">Volunteer</a>
+                        <a href="#contact" class="footer__link">Partnership</a>
+                        <a href="#contact" class="footer__link">Careers</a>
+                    </div>
+                    
+                    <div class="footer__column">
+                        <h4 class="footer__heading">Contact Info</h4>
+                        <p class="footer__contact">
+                            <i class="fas fa-phone"></i>
+                            +254-757202147
+                        </p>
+                        <p class="footer__contact">
+                            <i class="fas fa-phone"></i>
+                            +254-702607629
+                        </p>
+                        <p class="footer__contact">
+                            <i class="fas fa-envelope"></i>
+                            teensforteenskenya6@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__social">
+                <h4 class="footer__social-title">Follow Our Journey</h4>
+                <div class="footer__social-links">
+                    <a href="https://www.facebook.com/61579905541139/" class="footer__social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/teensforteenskenya/" class="footer__social-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 Teens for Teens Kenya. All rights reserved. | Cultivating Future Leaders.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+</body>
+</html>

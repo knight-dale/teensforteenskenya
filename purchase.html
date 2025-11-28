@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order TTK T-shirt | Teens For Teens Kenya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="resources/logo.jpg" alt="TTK Logo" class="w-8 h-8 rounded-lg mr-3">
+                    <span class="text-lg font-bold text-gray-800">Teens For Teens Kenya</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Order Form Section -->
+    <section class="py-12">
+        <div class="max-w-2xl mx-auto px-4">
+            <!-- Progress Steps -->
+            <div class="progress-steps mb-12">
+                <div class="flex justify-between items-center">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Order Details</div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Payment</div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Confirmation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-card">
+                <div class="order-header">
+                    <h1 class="order-title">Order Your TTK T-shirt</h1>
+                    <p class="order-subtitle">Support our cause while looking great!</p>
+                </div>
+
+                <form id="orderForm" class="order-form">
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">
+                            <i class="fas fa-user mr-2"></i>Personal Information
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label for="fullName" class="form-label">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required class="form-input" placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number (M-Pesa) *</label>
+                                <input type="tel" id="phone" name="phone" required class="form-input" placeholder="07XXXXXXXX">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com (optional)">
+                        </div>
+                    </div>
+
+                    <!-- Order Details -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">
+                            <i class="fas fa-tshirt mr-2"></i>Order Details
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label for="size" class="form-label">T-shirt Size *</label>
+                                <select id="size" name="size" required class="form-input">
+                                    <option value="">Select Size</option>
+                                    <option value="M">Medium</option>
+                                    <option value="L">Large</option>
+                                    <option value="XL">Extra Large</option>
+                                    <option value="XXL">2XL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantity" class="form-label">Quantity *</label>
+                                <select id="quantity" name="quantity" required class="form-input">
+                                    <option value="1">1 T-shirt - KSH 800</option>
+                                    <option value="2">2 T-shirts - KSH 1,600</option>
+                                    <option value="3">3 T-shirts - KSH 2,400</option>
+                                    <option value="4">4 T-shirts - KSH 3,200</option>
+                                    <option value="5">5 T-shirts - KSH 4,000</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delivery Information -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">
+                            <i class="fas fa-truck mr-2"></i>Delivery Information
+                        </h3>
+                        <div class="form-group">
+                            <label for="location" class="form-label">Delivery Location *</label>
+                            <input type="text" id="location" name="location" required class="form-input" placeholder="e.g., Nairobi CBD, Westlands, etc.">
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="form-label">Detailed Address</label>
+                            <textarea id="address" name="address" class="form-input" rows="3" placeholder="Building name, street, landmark..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Payment Instructions -->
+                    <div class="payment-section">
+                        <h3 class="payment-title">
+                            <i class="fas fa-money-bill-wave mr-2"></i>Payment Instructions
+                        </h3>
+                        <div class="payment-card">
+                            <div class="payment-header">
+                                <h4 class="payment-method">Pay via M-Pesa</h4>
+                                <div class="total-amount">
+                                    Total: <span id="totalAmount">KSH 800</span>
+                                </div>
+                            </div>
+                            <div class="payment-steps">
+                                <div class="payment-step">
+                                    <span class="step-number">1</span>
+                                    <span class="step-text">Go to M-Pesa on your phone</span>
+                                </div>
+                                <div class="payment-step">
+                                    <span class="step-number">2</span>
+                                    <span class="step-text">Select "Lipa Na M-Pesa"</span>
+                                </div>
+                                <div class="payment-step">
+                                    <span class="step-number">3</span>
+                                    <span class="step-text">Select "Pay Bill"</span>
+                                </div>
+                                <div class="payment-step">
+                                    <span class="step-number">4</span>
+                                    <div class="step-with-copy">
+                                        <span class="step-text">Business No: <strong>880100</strong></span>
+                                        <button type="button" id="copyBusinessNo" class="copy-btn">
+                                            <i class="fas fa-copy mr-1"></i>Copy
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="payment-step">
+                                    <span class="step-number">5</span>
+                                    <div class="step-with-copy">
+                                        <span class="step-text">Account No: <strong>9676730018</strong></span>
+                                        <button type="button" id="copyAccountNo" class="copy-btn">
+                                            <i class="fas fa-copy mr-1"></i>Copy
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="payment-step">
+                                    <span class="step-number">6</span>
+                                    <span class="step-text">Amount: <strong id="paymentAmount">KSH 800</strong></span>
+                                </div>
+                            </div>
+                            <div class="payment-note">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                Click the "Copy" buttons to easily paste the numbers in M-Pesa
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Note & Submit Button -->
+                    <div class="form-actions">
+                        <div class="whatsapp-note">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            After clicking "Submit Order", WhatsApp will open with your order details pre-filled. Simply send the message to complete your order.
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane mr-2"></i>Submit Order
+                            </button>
+                            <a href="index.html" class="cancel-btn">
+                                <i class="fas fa-arrow-left mr-2"></i>Back to Home
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-12">
+        <div class="max-w-6xl mx-auto px-4 py-6 text-center text-gray-600">
+            <p>&copy; 2025 Teens For Teens Kenya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/purchase.js"></script>
+</body>
+</html>
