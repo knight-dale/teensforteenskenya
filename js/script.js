@@ -53,12 +53,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    let scrollTimeout;
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
+        
+        // Clear previous timeout
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        
+        // Add a class during scrolling for performance
+        document.body.classList.add('scrolling');
+        
+        // Remove the class after scrolling stops
+        scrollTimeout = setTimeout(() => {
+            document.body.classList.remove('scrolling');
+        }, 100);
     });
 
     document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -165,12 +179,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    window.addEventListener('resize', () => {
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => {
-            document.body.style.overflow = '';
-        }, 100);
-    });
+    // REMOVED the problematic resize event handler that was causing jerky scrolling
+    // window.addEventListener('resize', () => {
+    //     document.body.style.overflow = 'hidden';
+    //     setTimeout(() => {
+    //         document.body.style.overflow = '';
+    //     }, 100);
+    // });
 
     const scene = document.getElementById('scene');
     if (scene && typeof Parallax !== 'undefined') {
