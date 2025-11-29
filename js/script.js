@@ -102,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         top: offsetPosition,
                         behavior: 'smooth'
                     });
-                    window.history.replaceState({}, '', href);
                 }
             }
         });
