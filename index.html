@@ -4,42 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teens For Teens Kenya</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- External CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="text-gray-800">
 
-    <!-- Navbar (Fixed and Professional) -->
     <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 transition-all duration-300 transform">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16"> <!-- Reduced from h-20 to h-16 -->
+            <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <a href="#" class="flex-shrink-0 flex items-center">
                         <img src="resources/logo.jpg" 
                             alt="Teens For Teens Kenya Logo" 
-                            class="w-8 h-8 rounded-lg object-cover mr-3"> <!-- Reduced logo size -->
-                        <span class="ml-2 text-lg font-bold text-gray-800 hidden sm:inline">Teens For Teens Kenya</span> <!-- Reduced text size -->
+                            class="w-8 h-8 rounded-lg object-cover mr-3">
+                        <span class="ml-2 text-lg font-bold text-gray-800">Teens For Teens Kenya</span>
                     </a>
                 </div>
 
-                <!-- Desktop Navigation Links -->
-                <div class="hidden md:flex items-center space-x-6"> <!-- Reduced spacing -->
-                    <a href="#mission" class="nav-link text-sm">Mission</a> <!-- Smaller text -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#mission" class="nav-link text-sm">Mission</a>
                     <a href="#impact" class="nav-link text-sm">Impact</a>
                     <a href="#projects" class="nav-link text-sm">Projects</a>
                     <a href="#team" class="nav-link text-sm">Team</a>
                     <a href="#merchandise" class="nav-link text-sm">Merchandise</a>
-                    <!-- Donate Button (Desktop) -->
-                    <a href="#donate" class="donate-btn text-sm py-2 px-4"> <!-- Smaller button -->
+                    <a href="#donate" class="donate-btn text-sm py-2 px-4">
                         <i class="fas fa-heart mr-2"></i> DONATE NOW
                     </a>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <div class="flex items-center md:hidden">
                     <button id="hamburger" class="mobile-menu-btn">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +45,6 @@
         </div>
     </nav>
 
-    <!-- Mobile Sidebar -->
     <div id="mobile-sidebar" class="mobile-sidebar">
         <div class="mobile-sidebar__header">
             <div class="mobile-sidebar__brand">
@@ -116,13 +109,11 @@
         </div>
     </div>
 
-    <!-- Overlay -->
     <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
     <header id="home" class="hero-bg pt-40 pb-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center text-white">
-            
-            <!-- Left: Main Text Content -->
+
             <div class="fade-up delay-100">
                 <div class="badge">
                     <span class="badge-dot"></span>
@@ -142,14 +133,13 @@
                 </p>
             </div>
 
-            <!-- Right: CEO Quote Card -->
             <div class="ceo-card fade-up delay-200">
                 <div class="ceo-card-header">
                     <div class="quote-icon">
                         <i class="fas fa-quote-left text-green-800 text-xl"></i>
                     </div>
                     <blockquote class="ceo-quote">
-                        "At TeensforTeens Kenya, we believe in this. We don't just plant trees, we grill minds, we plant hope, we plant purpose. Be part of the movement"
+                        "At TeensforTeens Kenya, we believe in this. We don't just plant trees, we green minds, we plant hope, we plant purpose. Be part of the movement"
                     </blockquote>
                 </div>
 
@@ -176,8 +166,6 @@
         </div>
     </header>
 
-
-        <!-- Statistics Section with Background Photo -->
     <section class="stats-section" style="background: url('resources/projects/prepping-distribution.jpg') center/cover; position: relative;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="position: relative; z-index: 2;">
             <div class="stats-grid">
@@ -201,7 +189,6 @@
         </div>
     </section>
 
-    <!-- Mission and Vision Section -->
     <section id="mission" class="mission-section scroll-mt-20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="section-header fade-up">
@@ -216,7 +203,6 @@
         </div>
     </section>
 
-    <!-- Impact & Activities Section with Background Photo -->
     <section id="impact" class="impact-section scroll-mt-20" style="background: url('resources/projects/group-members.jpg') center/cover fixed; position: relative;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="position: relative; z-index: 2;">
             <div class="section-header fade-up">
@@ -225,7 +211,6 @@
             </div>
 
             <div class="impact-grid">
-                <!-- Initiative 1: Environmental Conservation -->
                 <div class="impact-card fade-up delay-100">
                     <div class="card-icon">
                         <i class="fas fa-tree text-green-700 text-2xl"></i>
@@ -236,7 +221,6 @@
                     </p>
                 </div>
 
-                <!-- Initiative 2: Agricultural Empowerment -->
                 <div class="impact-card fade-up delay-200">
                     <div class="card-icon">
                         <i class="fas fa-egg text-green-700 text-2xl"></i>
@@ -247,7 +231,6 @@
                     </p>
                 </div>
 
-                <!-- Initiative 3: Climate Change Advocacy -->
                 <div class="impact-card fade-up delay-300">
                     <div class="card-icon">
                         <i class="fas fa-graduation-cap text-green-700 text-2xl"></i>
@@ -261,7 +244,6 @@
         </div>
     </section>
 
-        <!-- Youth Empowerment Through Agriculture Section -->
     <section id="youth-empowerment" class="youth-empowerment-section scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="section-header fade-up">
@@ -270,7 +252,6 @@
             </div>
 
             <div class="empowerment-grid">
-                <!-- Card 1: Skills Development -->
                 <div class="empowerment-card fade-up delay-100">
                     <div class="empowerment-icon">
                         <i class="fas fa-tools"></i>
@@ -283,7 +264,6 @@
                     </p>
                 </div>
 
-                <!-- Card 2: Economic Empowerment -->
                 <div class="empowerment-card fade-up delay-200">
                     <div class="empowerment-icon">
                         <i class="fas fa-chart-line"></i>
@@ -296,7 +276,6 @@
                     </p>
                 </div>
 
-                <!-- Card 3: Climate Resilience -->
                 <div class="empowerment-card fade-up delay-300">
                     <div class="empowerment-icon">
                         <i class="fas fa-shield-alt"></i>
@@ -310,7 +289,6 @@
                 </div>
             </div>
 
-            <!-- Call to Action -->
             <div class="text-center mt-16 fade-up delay-400">
                 <div class="max-w-4xl mx-auto">
                     <h3 class="text-2xl font-bold text-primary-green mb-4">
@@ -331,7 +309,6 @@
         </div>
     </section>
 
-    <!-- Impact Statistics Banner -->
     <section class="bg-primary-green py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -359,7 +336,6 @@
         </div>
     </section>
 
-    <!-- Project Gallery Section -->
     <section id="projects" class="projects-section scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="section-header fade-up">
@@ -368,7 +344,6 @@
             </div>
             
             <div class="projects-grid">
-                <!-- Photo 1 -->
                 <div class="project-card fade-up delay-100">
                     <div class="project-image-container">
                         <img class="project-image" src="resources/projects/tree-planting.jpg" alt="Tree Planting Initiative">
@@ -383,8 +358,7 @@
                         <p class="project-description">Teens for Teens Kenya educating students on the importance of tree planting.</p>
                     </div>
                 </div>
-                
-                <!-- Photo 2 -->
+
                 <div class="project-card fade-up delay-150">
                     <div class="project-image-container">
                         <img class="project-image" src="resources/projects/head-of-agriculture.jpg" alt="TTK team posing with school principal">
@@ -399,8 +373,7 @@
                         <p class="project-description">Our team posing with the head of agriculture of Muslim Primary School.</p>
                     </div>
                 </div>
-                
-                <!-- Photo 3 -->
+
                 <div class="project-card fade-up delay-200">
                     <div class="project-image-container">
                         <img class="project-image" src="resources/projects/indakwa.jpg" alt="Educating Students">
@@ -415,8 +388,7 @@
                         <p class="project-description">Our Secretary, William Indakwa, ensuring that the students understand the facts about seedlings.</p>
                     </div>
                 </div>
-                
-                <!-- Photo 4 -->
+
                 <div class="project-card fade-up delay-250">
                     <div class="project-image-container">
                         <img class="project-image" src="resources/projects/team-chlorophyl.jpg" alt="Distributing tree seedlings to community">
@@ -431,8 +403,7 @@
                         <p class="project-description">Distributing quality tree seedlings to local community members</p>
                     </div>
                 </div>
-                
-                <!-- Photo 5 -->
+
                 <div class="project-card fade-up delay-300">
                     <div class="project-image-container">
                         <img class="project-image" src="resources/projects/members.jpg" alt="Meet the TTK Team">
@@ -447,8 +418,7 @@
                         <p class="project-description">Teens for Teens Kenya team members ready for the tree planting session.</p>
                     </div>
                 </div>
-                
-                <!-- Photo 6 -->
+
                 <div class="project-card fade-up delay-350">
                     <div class="project-image-container">
                         <img class="project-image" src="resources/projects/handing-out-seedlings.jpg" alt="Seedlings distribution">
@@ -463,8 +433,7 @@
                         <p class="project-description">Students line up to receive their seedlings from our CEO.</p>
                     </div>
                 </div>
-                
-                <!-- Photo 7 -->
+
                 <div class="project-card fade-up delay-400">
                     <div class="project-image-container">
                         <img class="project-image" src="resources/projects/one-teen-one-tree-one-future.jpg" alt="Group slogan in action">
@@ -479,8 +448,7 @@
                         <p class="project-description">Showcasing the organizations's mission of one teen, one tree, one future.</p>
                     </div>
                 </div>
-                
-                <!-- Photo 8 -->
+
                 <div class="project-card fade-up delay-450">
                     <div class="project-image-container">
                         <img class="project-image" src="resources/projects/success-cards.jpg" alt="Encouraging Candidates">
@@ -505,7 +473,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
     <section id="team" class="team-section scroll-mt-20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="section-header fade-up">
@@ -544,7 +511,6 @@
         </div>
     </section>
 
-    <!-- Merchandise Section -->
     <section id="merchandise" class="merchandise-section scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="section-header fade-up">
@@ -554,7 +520,6 @@
             </div>
 
             <div class="merchandise-content">
-                <!-- T-shirt Product -->
                 <div class="product-card fade-up delay-100">
                     <div class="product-images">
                         <div class="product-image-container">
@@ -605,8 +570,7 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- How to Order Section -->
+
                 <div class="ordering-info fade-up delay-200">
                     <h3 class="ordering-title">How to Order</h3>
                     <div class="ordering-steps">
@@ -637,7 +601,6 @@
         </div>
     </section>
 
-    <!-- Donate Section -->
     <section id="donate" class="donate-section scroll-mt-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="donate-subtitle">
@@ -669,7 +632,6 @@
         </div>
     </section>
 
-    <!-- Comments Section -->
     <section id="comments" class="comments-section scroll-mt-20" style="background: var(--white); padding: 4rem 0;">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="section-header fade-up">
@@ -709,7 +671,6 @@
                 </form>
             </div>
 
-            <!-- Comments Display Area -->
             <div id="commentsDisplay" class="mt-12 space-y-6 fade-up delay-200">
                 <div class="text-center">
                     <div class="inline-flex items-center justify-center">
@@ -721,7 +682,6 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
     <section id="contact" class="contact-section scroll-mt-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="section-header fade-up">
@@ -748,7 +708,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__content">
@@ -817,7 +776,6 @@
         </div>
     </footer>
 
-    <!-- External JavaScript -->
     <script src="js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 </body>

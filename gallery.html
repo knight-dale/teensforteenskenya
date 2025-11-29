@@ -8,136 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .gallery-hero {
-            background: linear-gradient(135deg, #1a472a 0%, #2d5a2d 50%, #38761d 100%);
-            padding: 120px 0 60px;
-            color: white;
-            text-align: center;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            padding: 3rem 0;
-        }
-        
-        .gallery-item {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        .gallery-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .video-container {
-            position: relative;
-            width: 100%;
-            height: 250px;
-            background: #000;
-        }
-        
-        .gallery-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .video-play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .video-play-btn:hover {
-            background: var(--primary-green);
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-        
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
-        }
-        
-        .gallery-caption {
-            padding: 1rem;
-            background: white;
-        }
-        
-        .gallery-caption-title {
-            font-weight: 600;
-            color: var(--primary-green);
-            margin-bottom: 0.5rem;
-        }
-        
-        .gallery-caption-text {
-            font-size: 0.875rem;
-            color: #6b7280;
-            line-height: 1.5;
-        }
-        
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.75rem 1.5rem;
-            background: var(--primary-green);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            margin-bottom: 2rem;
-        }
-        
-        .back-btn:hover {
-            background: var(--secondary-green);
-            transform: translateY(-2px);
-        }
-        
-        .gallery-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 1rem 2rem;
-            background: var(--primary-green);
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .gallery-btn:hover {
-            background: var(--secondary-green);
-            transform: translateY(-2px);
-        }
-    </style>
 </head>
 <body class="text-gray-800">
 
-    <!-- Navigation (same as index.html) -->
     <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
@@ -171,7 +44,6 @@
         </div>
     </nav>
 
-    <!-- Gallery Hero Section -->
     <section class="gallery-hero">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <a href="index.html#projects" class="back-btn">
@@ -182,11 +54,9 @@
         </div>
     </section>
 
-    <!-- Full Gallery -->
     <section class="gallery-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="gallery-grid">
-                <!-- Video Item -->
                 <div class="gallery-item fade-up">
                     <div class="video-container">
                         <video class="gallery-video" poster="resources/projects/video-poster.jpg" controls>
@@ -213,7 +83,6 @@
                     </div>
                 </div>
 
-                <!-- Photo 1 -->
                 <div class="gallery-item fade-up">
                     <img src="resources/projects/tree-planting.jpg" alt="Tree Planting Initiative" class="gallery-image">
                     <div class="gallery-caption">
@@ -229,8 +98,7 @@
                         <p class="gallery-caption-text">Our team posing with the head of agriculture of Muslim Primary School.</p>
                     </div>
                 </div>
-                
-                <!-- Photo 3 -->
+
                 <div class="gallery-item fade-up">
                     <img src="resources/projects/indakwa.jpg" alt="Indakwa speaking to students" class="gallery-image">
                     <div class="gallery-caption">
@@ -238,8 +106,7 @@
                         <p class="gallery-caption-text">Our Secretary, William Indakwa, ensuring that the students understand the facts about seedlings.</p>
                     </div>
                 </div>
-                
-                <!-- Photo 4 -->
+
                 <div class="gallery-item fade-up">
                     <img src="resources/projects/team-chlorophyl.jpg" alt="Team chlorophyl at its best" class="gallery-image">
                     <div class="gallery-caption">
@@ -247,8 +114,7 @@
                         <p class="gallery-caption-text">No fact will be left untold with us here, as long as it can bring change, it has to be told.</p>
                     </div>
                 </div>
-                
-                <!-- Photo 5 -->
+
                 <div class="gallery-item fade-up">
                     <img src="resources/projects/members.jpg" alt="Meet the TTK Team" class="gallery-image">
                     <div class="gallery-caption">
@@ -256,8 +122,7 @@
                         <p class="gallery-caption-text">Teens for Teens Kenya team members ready for the tree planting session.</p>
                     </div>
                 </div>
-                
-                <!-- Photo 6 -->
+
                 <div class="gallery-item fade-up">
                     <img src="resources/projects/handing-out-seedlings.jpg" alt="Seedlings distribution" class="gallery-image">
                     <div class="gallery-caption">
@@ -265,8 +130,7 @@
                         <p class="gallery-caption-text">Students line up to receive their seedlings from our CEO.</p>
                     </div>
                 </div>
-                
-                <!-- Photo 7 -->
+
                 <div class="gallery-item fade-up">
                     <img src="resources/projects/one-teen-one-tree-one-future.jpg" alt="Group Slogan in action" class="gallery-image">
                     <div class="gallery-caption">
@@ -274,8 +138,7 @@
                         <p class="gallery-caption-text">Showcasing the organization's mission of one teen, one tree, one future.</p>
                     </div>
                 </div>
-                
-                <!-- Photo 8 -->
+
                 <div class="gallery-item fade-up">
                     <img src="resources/projects/success-cards.jpg" alt="Encouraging Candidates" class="gallery-image">
                     <div class="gallery-caption">
@@ -390,7 +253,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__content">
